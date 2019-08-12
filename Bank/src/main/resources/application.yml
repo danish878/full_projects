@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank
+    username: nativeuser
+    password: PmDbS@787
+
+    tomcat:
+      test-while-idle:  true
+      validation-query: SELECT 1
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+
+  thymeleaf:
+    cache: false
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

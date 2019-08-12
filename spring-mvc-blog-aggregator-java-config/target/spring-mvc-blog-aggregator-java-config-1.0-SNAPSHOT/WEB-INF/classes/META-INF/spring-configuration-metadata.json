@@ -1,0 +1,62 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "com.danny.jba.config.JdbcConfig",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.jpa.hibernate",
+      "type": "com.danny.jba.config.JPAConfig",
+      "sourceType": "com.danny.jba.config.JPAConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.datasource.jndi-url",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JdbcConfig"
+    },
+    {
+      "name": "spring.jpa.hibernate.ddl-auto",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JPAConfig"
+    },
+    {
+      "name": "spring.jpa.hibernate.dialect",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JPAConfig"
+    },
+    {
+      "name": "spring.jpa.hibernate.format-sql",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JPAConfig"
+    },
+    {
+      "name": "spring.jpa.hibernate.show-sql",
+      "type": "java.lang.String",
+      "sourceType": "com.danny.jba.config.JPAConfig"
+    }
+  ],
+  "hints": []
+}

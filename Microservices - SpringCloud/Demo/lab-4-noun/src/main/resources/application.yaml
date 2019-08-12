@@ -1,0 +1,11 @@
+#eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka -> now coming from config server
+
+# Note: all properties defined in this file are subject to replacement by the configuration server.
+---
+#words: boat,book,vote,seat,backpack,partition,groundhog
+words: fallback
+
+---
+spring:
+  profiles: cold-noun
+words: icicle,refrigerator,blizzard,snowball

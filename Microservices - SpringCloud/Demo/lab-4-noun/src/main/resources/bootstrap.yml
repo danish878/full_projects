@@ -1,0 +1,22 @@
+---
+spring:
+  application:
+    name: noun
+  cloud:
+    config:
+      uri: http://localhost:8001
+  rabbitmq:
+    addresses: amqp://ubqukczg:SPMzIWiB0zlVQRTcElK3bySS_VXgxttU@flamingo.rmq.cloudamqp.com/ubqukczg
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
+
+# Allow Eureka to recognize two apps of the same type on the same host as separate instances:
+eureka:
+  instance:
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+---
+spring:
+  profiles: cold-noun
+words: icicle,refrigerator,blizzard,snowball

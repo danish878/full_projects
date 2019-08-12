@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:wf="http://www.springframework.org/schema/webflow-config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/webflow-config
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+
+    <context:component-scan base-package="com.danny.webflow"/>
+
+    <mvc:annotation-driven/>
+
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"/>
+
+<!--    WEBFLOW CONFIGURATION-->
+<!--    Entry point for the flow-->
+    <wf:flow-executor id="flowExecutor" flow-registry="flowRegistry" />
+
+    <wf:flow-registry base-path="WEB-INF/views/flows" flow-builder-services="flowBuilderServices">
+        <wf:flow-location-pattern value="/**/*-flow.xml"/>
+    </wf:flow-registry>
+
+    <wf:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator" />
+
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+        <property name="flowExecutor" ref="flowExecutor" />
+    </bean>
+
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="flowRegistry" />
+<!--        <property name="order" value="-1" />-->
+    </bean>
+
+    <bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+        <property name="viewResolvers" ref="viewResolver" />
+    </bean>
+
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+        p:viewClass="org.springframework.web.servlet.view.tiles3.TilesView" />
+
+
+</beans>
