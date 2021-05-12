@@ -11,7 +11,7 @@
 
     <properties>
         <spring.version>5.1.8.RELEASE</spring.version>
-        <security.spring.version>5.1.5.RELEASE</security.spring.version>
+        <security.spring.version>5.2.10.RELEASE</security.spring.version>
         <spring.webflow.version>2.5.1.RELEASE</spring.webflow.version>
     </properties>
 
