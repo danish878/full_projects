@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <springframework.version>5.0.9.RELEASE</springframework.version>
+        <springframework.version>5.3.18</springframework.version>
         <springsecurity.version>5.0.8.RELEASE</springsecurity.version>
         <springwebflow.version>2.5.1.RELEASE</springwebflow.version>
 
